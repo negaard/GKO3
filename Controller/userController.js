@@ -3,7 +3,7 @@ const User = require('../Model/user');
 
 //hardcoder ny user ud fra model-klasse
 let User1 = new User('Lukas', 'Negaard', '20', "Jeg spiller computer");
-let User2 = new User("Frederikke", "Kristensen", "20", "Karate");
+let User2 = new User("Frederikke", "Kristensen", "20", "Jeg kan godt lide karate");
 var userList = [User1, User2]
 
 //User read controller
