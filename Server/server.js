@@ -1,8 +1,11 @@
 const express = require('express')
 const app = express()
 const port = 3000
-var http = require("http");
-
-server.listen(port, () => {
+ 
+app.get('/', function (req, res) {
+  res.send('Hello World')
+})
+ 
+app.listen(port, () => {
     console.log(`Server-applikation lytter på http://localhost:${port}`)
   })
