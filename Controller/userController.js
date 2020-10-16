@@ -24,6 +24,14 @@ var idx = userList.findIndex(x=>x.accountNumber==req.query.accountNumber)
     }
 }
 
+//User create controller
+function userCreateController(req,res) {
 
-//eksporter controlleren
+}
+//User update controller
+function userUpdateController(req,res) {
+    
+}
+
+//eksporter user controller
 module.exports = {userDelController,userController};

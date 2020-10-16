@@ -1,3 +1,4 @@
+//Create class interest
 class Interest {
     static interestNumber = 1;
     constructor (interest) {

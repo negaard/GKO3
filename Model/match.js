@@ -1,3 +1,4 @@
+//create matched class
 class Matched {
     static matchedNumber = 1;
     constructor (user1, user2) {
