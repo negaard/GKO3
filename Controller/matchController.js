@@ -1,13 +1,27 @@
 //henter match model
 const Matched = require('../Model/match');
 
-//hardcoder ny user ud fra model-klasse
+//hardcoder ny matched ud fra model-klasse
 let matched1 = new Matched("Lukas", "Frederikke");
+let matched2 = new Matched("Adam", "Sofie");
+var matchedList = [matched1, matched2]
 
-//controller
+//Match read controller
 function matchedController(req, res) {
-    res.end(JSON.stringify(matched1))
+    res.end(JSON.stringify(matchedList))
+}
+//Match delete controller
+function matchedDelController(req,res) {
+    if(req.query.matchedNumber) {
+      console.log("Deleting match: " + req.query.matchedNumber);
+var idx = matchedList.findIndex(x=>x.matchedNumber==req.query.matchedNumber) 
+        matchedList.splice(idx, 1)
+      res.status(200).send({});
+    
+    } else {
+      res.status(400).send("Please specify a match ID");
+    }
 }
 
 //eksporter controlleren
-module.exports = matchedController;
+module.exports = {matchedDelController,matchedController};
