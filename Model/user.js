@@ -1,7 +1,7 @@
 //definerer model-klasse for User
 class User {
     static accountNumber = 1;
-    constructor(fname, lname, age, bio,) {
+    constructor(fname, lname, age, bio) {
         this.fname = fname;
         this.lname = lname;
         this.age = age;
@@ -22,7 +22,13 @@ class FreeUser extends User {
         super(fname, lname, age, bio, image);
     }
 }
-
+class Image {
+    constructor(imagesize, uploadtime, filename) {
+    this.imagesize = imagesize;
+    this.uploadtime = uploadtime;
+    this.filename = filename;
+}
+}
 
 
 //eksporter user
