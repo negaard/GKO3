@@ -1,11 +1,12 @@
 //definerer model-klasse for User
 class User {
-    constructor(fname, lname, age, bio, image) {
+    static accountNumber = 1;
+    constructor(fname, lname, age, bio,) {
         this.fname = fname;
         this.lname = lname;
         this.age = age;
         this.bio = bio;
-        this.image = image;
+        this.accountNumber = User.accountNumber ++;
     }
 }
 //payment user med creditcard
@@ -21,6 +22,8 @@ class FreeUser extends User {
         super(fname, lname, age, bio, image);
     }
 }
+
+
 
 //eksporter user
 module.exports = User;
