@@ -24,9 +24,13 @@ var idx = matchedList.findIndex(x=>x.matchedNumber==req.query.matchedNumber)
 }
 
 //match create controller
-function matchedCreateController(req,res) {
+    function matchedCreateController(req,res) {
+        var json= req.body;
+        matchedx=new Matched (json.user1, json.user2)
+        matchedList.push(matchedx);
+        res.status(200).send({});
+        }
 
-}
 //match update controller
 function matchedUpdateController(req,res) {
     

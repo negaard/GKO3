@@ -25,8 +25,12 @@ var idx = interestList.findIndex(x=>x.interestNumber==req.query.interestNumber)
 
 //User create controller
 function interestCreateController(req,res) {
+    var json= req.body;
+    interestx=new Interest (json.interest)
+    interestList.push(interestx);
+    res.status(200).send({});
+    }
 
-}
 //User update controller
 function interestUpdateController(req,res) {
     
