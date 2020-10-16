@@ -3,5 +3,5 @@ class Interest {
         this.interest = interest
     }
 }
-//eksporter match
+//eksporter interest
 module.exports = Interest;

@@ -5,11 +5,11 @@ const port = 3000;
 //henter controller fra sti
 let userController = require('../Controller/userController');
 let interestController = require("../Controller/interestController");
-let matchController = require("../Controller/matchController");
+let matchedController = require("../Controller/matchController");
 //read endpoint på routen '/'
 app.get('/user/', userController);
 app.get("/interest/", interestController);
-app.get("/match/", matchController);
+app.get("/match/", matchedController);
  
 app.listen(port, () => {
     console.log(`Server-applikation lytter på http://localhost:${port}`)
