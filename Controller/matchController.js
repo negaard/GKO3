@@ -33,7 +33,17 @@ var idx = matchedList.findIndex(x=>x.matchedNumber==req.query.matchedNumber)
 
 //match update controller
 function matchedUpdateController(req,res) {
-    
+    var json =req.body;
+var idx = matchedList.findIndex (x=> x.matchedNumber==json.matchedNumber)
+if (idx == -1){
+    res.status(400).send("invalid match number: "+json.matchedNumber);
+
+} else {
+    if (req.body.user1){matchedList[idx].user1=req.body.user1}
+    if (req.body.user2){matchedList[idx].user2=req.body.user2}
+    res.status(200).send({})
+}
+
 }
 
 //eksporter match controller

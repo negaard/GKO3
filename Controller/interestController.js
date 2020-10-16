@@ -33,7 +33,15 @@ function interestCreateController(req,res) {
 
 //User update controller
 function interestUpdateController(req,res) {
-    
+    var json =req.body;
+var idx = interestList.findIndex (x=> x.interestNumber==json.interestNumber)
+if (idx == -1){
+    res.status(400).send("invalid interest number: "+json.interestNumber);
+
+} else {
+    if (req.body.interest){interestList[idx].interest=req.body.interest}
+    res.status(200).send({})
+}
 }
 
 //eksporter interest controller
