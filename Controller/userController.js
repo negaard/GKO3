@@ -26,12 +26,27 @@ var idx = userList.findIndex(x=>x.accountNumber==req.query.accountNumber)
 
 //User create controller
 function userCreateController(req,res) {
-
+var json= req.body;
+userx=new User (json.fname, json.lname, json.age, json.bio)
+userList.push(userx);
+res.status(200).send({});
 }
 //User update controller
 function userUpdateController(req,res) {
-    
+    var json =req.body;
+var idx = userList.findIndex (x=> x.accountNumber==json.accountNumber)
+if (idx == -1){
+    res.status(400).send("invalid account number: "+json.accountNumber);
+
+} else {
+    if (req.body.fname){userList[idx].fname=req.body.fname}
+    if (req.body.lname){userList[idx].lname=req.body.lname}
+    if (req.body.age){userList[idx].age=req.body.age}
+    if (req.body.bio){userList[idx].bio=req.body.bio}
+    res.status(200).send({})
+}
+
 }
 
 //eksporter user controller
-module.exports = {userDelController,userController};
+module.exports = {userDelController,userController, userCreateController, userUpdateController};

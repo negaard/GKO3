@@ -23,5 +23,14 @@ var idx = interestList.findIndex(x=>x.interestNumber==req.query.interestNumber)
     }
 }
 
-//eksporter controlleren
-module.exports = {interestController, interestDelController};
+//User create controller
+function interestCreateController(req,res) {
+
+}
+//User update controller
+function interestUpdateController(req,res) {
+    
+}
+
+//eksporter interest controller
+module.exports = {interestController, interestDelController,interestCreateController,interestUpdateController};

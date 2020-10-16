@@ -23,5 +23,14 @@ var idx = matchedList.findIndex(x=>x.matchedNumber==req.query.matchedNumber)
     }
 }
 
-//eksporter controlleren
-module.exports = {matchedDelController,matchedController};
+//match create controller
+function matchedCreateController(req,res) {
+
+}
+//match update controller
+function matchedUpdateController(req,res) {
+    
+}
+
+//eksporter match controller
+module.exports = {matchedDelController,matchedController,matchedCreateController, matchedUpdateController};
